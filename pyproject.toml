@@ -54,14 +54,7 @@ dependencies = [
 "Documentation" = "https://github.com/lovekaushik899/seqengine#readme"
 
 [project.scripts]
-seqengine = "seqengine.__main__:main"
+seqengine = "seqengine:main"
 
 [tool.setuptools]
-packages = ["seqengine"]
-include-package-data = true
-
-[tool.setuptools.package-data]
-"*" = ["*.txt", "*.md"]
-
-[tool.setuptools.package-dir]
-"" = "src"
+py-modules = ["seqengine"]
