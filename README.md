@@ -4,7 +4,15 @@
 [![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**SeqEngine** is a powerful, fully automated pipeline for feature extraction and feature selection from biological sequences (protein and DNA). It implements state‑of‑the‑art descriptors from **iLearn** and **ProPythia**, supports multiple feature selection methods, and generates detailed reports with ranked feature importance—all with a single command.
+**SeqEngine** is a fully automated, end‑to‑end pipeline for feature extraction and feature selection from biological sequences (protein and DNA). It extracts a comprehensive set of **610 features for proteins** and **400 features for DNA**, implements **seven feature selection methods** (univariate filters, wrapper, and embedded), and outputs multiple curated feature subsets along with a detailed text report containing sequence statistics, feature rankings, and performance metrics. Designed for researchers who need a reproducible, interpretable, and efficient tool to pre‑process sequence data for machine learning.
+
+---
+
+## 📊 Pipeline Overview
+
+The figure below shows the complete workflow of SeqEngine:
+
+![SeqEngine Workflow](Workflow.png)
 
 ---
 
