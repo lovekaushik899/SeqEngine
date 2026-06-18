@@ -679,7 +679,7 @@ class ReportGenerator:
 # MAIN PIPELINE
 # ============================================================================
 
-class BioLovePipeline:
+class SeqEnginePipeline:
     def __init__(self, seq_type: str, pos_file: str, neg_file: str,
                  output_dir: str, n_cores: int = 4):
         self.seq_type = seq_type
@@ -697,7 +697,7 @@ class BioLovePipeline:
 
     def run(self):
         print(f"\n{'='*60}")
-        print(f" BioLove: Automated Feature Engineering Pipeline")
+        print(f" SeqEngine: Automated Feature Engineering Pipeline")
         print(f" Sequence Type: {self.seq_type.upper()}")
         print(f" Output Directory: {self.output_dir}")
         print(f" Cores: {self.n_cores}")
@@ -827,12 +827,12 @@ class BioLovePipeline:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="BioLove: Automated Feature Engineering and Selection Pipeline",
-        epilog="""Examples:
-  Protein: python3 biolove.py --type prot --pos positive.fasta --neg negative.fasta --cores 4 --out ./results
-  DNA:     python3 biolove.py --type nuc --pos positive.fasta --neg negative.fasta --cores 4 --out ./results
-        """
-    )
+    description="SeqEngine: Automated Feature Engineering and Selection Pipeline",
+    epilog="""Examples:
+  Protein: seqengine --type prot --pos positive.fasta --neg negative.fasta --cores 4 --out ./results
+  DNA:     seqengine --type nuc --pos positive.fasta --neg negative.fasta --cores 4 --out ./results
+    """
+)
     parser.add_argument('--type', required=True, choices=['prot', 'nuc'],
                         help='Sequence type: prot (protein) or nuc (DNA)')
     parser.add_argument('--pos', required=True,
@@ -853,7 +853,7 @@ def main():
         print(f"Error: Negative file not found: {args.neg}")
         sys.exit(1)
 
-    pipeline = BioLovePipeline(
+    pipeline = SeqEnginePipeline(
         seq_type=args.type,
         pos_file=args.pos,
         neg_file=args.neg,
